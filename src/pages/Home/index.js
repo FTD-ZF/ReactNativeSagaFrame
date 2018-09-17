@@ -34,6 +34,7 @@ export default class Index extends Component {
 
   componentWillMount() {
     this.props.navigation.setParams({
+      showDrawer: () => this._showDrawer(),
       testCallBack: (str) => this._callBack(str),
     });
   }
