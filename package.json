@@ -1,0 +1,45 @@
+{
+  "name": "ReactNativeSagaFrame",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "buffer": "^5.2.1",
+    "js-pinyin": "^0.1.9",
+    "md5": "^2.2.1",
+    "moment": "^2.22.2",
+    "react": "16.4.1",
+    "react-native": "0.55.3",
+    "react-native-autoflatlist": "^1.0.0",
+    "react-native-iphone-x-helper": "^1.0.3",
+    "react-native-modal-datetime-picker": "^6.0.0",
+    "react-native-progress": "^3.5.0",
+    "react-native-refresh-list-view": "^1.0.10",
+    "react-native-root-siblings": "^3.1.0",
+    "react-native-storage": "^0.2.2",
+    "react-native-vector-icons": "^5.0.0",
+    "react-navigation": "^1.5.11",
+    "react-navigation-redux-helpers": "^1.1.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-actions": "^2.6.1",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^0.16.0",
+    "reselect": "^3.0.1",
+    "superagent": "^3.8.3",
+    "teaset": "^0.5.9"
+  },
+  "devDependencies": {
+    "babel-jest": "23.4.2",
+    "babel-preset-react-native": "^4.0.0",
+    "jest": "23.5.0",
+    "react-test-renderer": "16.4.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
