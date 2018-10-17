@@ -3,6 +3,7 @@ import Home from '../pages/Home';
 import LoginView from '../pages/Login';
 import ExhibitionView from '../pages/Exhibition';
 import ListView from '../pages/List';
+import ECharts from '../pages/ECharts';
 
 
 
@@ -12,4 +13,5 @@ export {
   LoginView,
   ExhibitionView,
   ListView,
+  ECharts,
 }

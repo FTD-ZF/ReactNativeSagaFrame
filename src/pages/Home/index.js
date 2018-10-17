@@ -73,7 +73,11 @@ export default class Index extends Component {
   _toList() {
     this.props.navigation.navigate('ListView', { title: '列表页面' });
   }
+  //跳转图表页面
+  _toECharts() {
+    this.props.navigation.navigate('ECharts', { title: '图表页面' });
 
+  }
 
 
   //展示侧拉弹窗
@@ -109,6 +113,7 @@ export default class Index extends Component {
 
           <FirstItemView title='列表数据' onPress={() => this._toList()} />
           <FirstItemView title={'登录post请求{' + this.state.strName + '}'} onPress={() => this._doLogin()} />
+          <FirstItemView title='图表组件' onPress={() => this._toECharts()} />
         </ScrollView>
       </View>
     );
