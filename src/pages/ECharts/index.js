@@ -39,7 +39,7 @@ export default class Index extends Component {
 
     /*
     ECharts设置 需要去node_modules/native-echarts/src/components/ECharts/index.js修改部分代码
-    1.禁止显示滑动条和滑动：改为scrollEnabled={true}和scalesPageToFit={true}
+    1.禁止显示滑动条和滑动：改为scrollEnabled={Platform.OS === 'ios' ? false : true}和scalesPageToFit={Platform.OS === 'ios' ? false : true}
     2.打包问题：ios暂无，安卓端：将node_modules/native-echarts/src/components/ECharts/tpl.html文件拷贝到安卓项目下面的app/src/main/assets文件夹中 
     修改：source={Platform.OS === 'ios' ? require('./tpl.html') : { uri: 'file:///android_asset/tpl.html' }}
     （由于是此处正好是用到这个组件，所以需要修改node_modules包中的内容；
