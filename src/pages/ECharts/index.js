@@ -17,6 +17,8 @@ import { AppColors, AppStyles } from '../../commons/styles';
 import * as Types from '../../infrastructure/constants/actionsTypes';
 import ECharts from 'native-echarts';
 
+let itemPosition = 0;
+
 export default class Index extends Component {
 
     static navigationOptions = ({ navigation }) => ({
@@ -48,18 +50,59 @@ export default class Index extends Component {
         return index.toString();
     }
 
+    //上一个
+    _lastOnePress() {
+        itemPosition--;
+        if (itemPosition < 0) {
+            itemPosition = 0;
+            return
+        }
+        this.refs._flatlist.scrollToIndex({ viewPosition: 0, index: itemPosition });
+    }
+
+    //下一个
+    _nextOnePress() {
+        itemPosition++;
+        if (itemPosition > this.state.data.length - 1) {
+            itemPosition = this.state.data.length - 1;
+            return
+        }
+        this.refs._flatlist.scrollToIndex({ viewPosition: 0, index: itemPosition });
+    }
+
+    //监听滚动距离 width为屏幕宽
+    _onScroll(event) {
+        console.log(event.nativeEvent.contentOffset.x + '');
+    }
 
     render() {
 
         return (
+            <View style={{ flexDirection: 'column' }}>
+                <FlatList
+                    ref='_flatlist'
+                    data={this.state.data}
+                    keyExtractor={(item, index) => this._keyExtractor(item, index)}
+                    renderItem={(item) => this._renderEChartsView(item)}
+                    onScroll={(event) => this._onScroll(event)}
+                    horizontal={true}
+                    showsHorizontalScrollIndicator={false}//横向滚动条隐藏
+                    getItemLayout={(data, index) => ({ length: AppStyles.screen_width, offset: AppStyles.screen_width * index, index })}
+                />
 
-            <FlatList
-                data={this.state.data}
-                keyExtractor={(item, index) => this._keyExtractor(item, index)}
-                renderItem={(item) => this._renderEChartsView(item)}
-                horizontal={true}
-                showsHorizontalScrollIndicator={false}//横向滚动条隐藏
-            />
+                <View style={{
+                    flexDirection: 'row',
+                    height: 50,
+                }}>
+                    <TouchableOpacity style={styles.firstStyle} onPress={() => this._lastOnePress()}>
+                        <Text>上一个</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.firstStyle} onPress={() => this._nextOnePress()}>
+                        <Text>下一个</Text>
+                    </TouchableOpacity>
+                </View>
+
+            </View>
 
         );
     }
@@ -104,6 +147,14 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         backgroundColor: '#dddddd',
     },
+    firstStyle: {
+        flex: 1,
+        alignItems: 'center',
+        margin: 5,
+        justifyContent: 'center',
+        backgroundColor: 'red'
+
+    }
 
 });
 
