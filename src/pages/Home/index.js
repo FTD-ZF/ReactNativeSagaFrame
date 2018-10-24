@@ -73,12 +73,16 @@ export default class Index extends Component {
   _toList() {
     this.props.navigation.navigate('ListView', { title: '列表页面' });
   }
+
   //跳转图表页面
   _toECharts() {
     this.props.navigation.navigate('ECharts', { title: '图表页面' });
-
   }
 
+  //图片选择页面
+  _toImagePicker() {
+    this.props.navigation.navigate('ImagePicker', { title: '图片视频音频选择' });
+  }
 
   //展示侧拉弹窗
   _showDrawer() {
@@ -114,6 +118,7 @@ export default class Index extends Component {
           <FirstItemView title='列表数据' onPress={() => this._toList()} />
           <FirstItemView title={'登录post请求{' + this.state.strName + '}'} onPress={() => this._doLogin()} />
           <FirstItemView title='图表组件' onPress={() => this._toECharts()} />
+          <FirstItemView title='图片-视频-音频组件' onPress={() => this._toImagePicker()} />
         </ScrollView>
       </View>
     );

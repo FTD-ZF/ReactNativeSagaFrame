@@ -4,9 +4,9 @@ import { Provider } from 'react-redux';
 import configureStore from './src/infrastructure/store/configureStore';
 import rootSaga from './src/infrastructure/sagas';
 import App from './src/components/Navigation/navState';
-import { Theme } from 'teaset';
+import { Toast, Theme } from 'teaset';
 import JPushModule from 'jpush-react-native';
-import { Toast } from 'teaset';
+
 const store = configureStore();
 // run root saga
 store.runSaga(rootSaga);

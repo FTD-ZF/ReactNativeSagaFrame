@@ -1,6 +1,6 @@
 import { StackNavigator, TabNavigator, DrawerNavigator } from 'react-navigation';
 import { headerOptions, RouteConfigs, TabNavigatorConfig, StackNavigatorConfig } from '../components/Navigation/navConfig';
-import { PersonalView, LoginView, Home, ExhibitionView, ListView, ECharts } from './index';
+import { PersonalView, LoginView, Home, ExhibitionView, ListView, ECharts, ImagePicker } from './index';
 
 
 
@@ -81,6 +81,17 @@ const Routers = StackNavigator(
     },
     ECharts: {
       screen: ECharts,
+      navigationOptions: props => {
+        return headerOptions({
+          ...props,
+          ...{
+            back: true,
+          },
+        })
+      },
+    },
+    ImagePicker: {
+      screen: ImagePicker,
       navigationOptions: props => {
         return headerOptions({
           ...props,
