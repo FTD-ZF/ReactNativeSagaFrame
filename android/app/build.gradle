@@ -188,6 +188,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-smart-barcode')
     compile project(':react-native-sound')
     compile project(':react-native-audio')
     compile project(':react-native-image-crop-picker')

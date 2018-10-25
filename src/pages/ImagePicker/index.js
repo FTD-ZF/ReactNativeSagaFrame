@@ -63,7 +63,7 @@ export default class Index extends Component {
             AudioRecorder.onFinished = (data) => {
                 // Android callback comes in the form of a promise instead.
                 if (Platform.OS === 'ios') {
-                    // this._finishRecording(data.status === "OK", data.audioFileURL, data.audioFileSize);
+                    this._finishRecording(data.status === "OK", data.audioFileURL, data.audioFileSize);
                 }
             };
         });
@@ -144,15 +144,9 @@ export default class Index extends Component {
             try {
                 const filePath = await AudioRecorder.stopRecording();
 
-                this.state.data.push(filePath);
-                this.setState({
-                    recoding: true,
-                    recodingtxt: '录制结束',
-                    data: this.state.data,
-                })
-                // if (Platform.OS === 'android') {
-                //     this._finishRecording(true, filePath);
-                // }
+                if (Platform.OS === 'android') {
+                    this._finishRecording(true, filePath);
+                }
 
             } catch (error) {
                 console.error(error);
@@ -161,8 +155,14 @@ export default class Index extends Component {
         }
     }
 
+    //ios端获取录音文件需要走onfinished(),所以此处集中处理两端文件路径
     _finishRecording(didSucceed, filePath, fileSize) {
-        console.log(`Finished recording of duration ${this.state.currentTime} seconds at path: ${filePath} and size of ${fileSize || 0} bytes`);
+        this.state.data.push(filePath);
+        this.setState({
+            recoding: true,
+            recodingtxt: '录制结束',
+            data: this.state.data,
+        })
     }
 
     //点击播放录音
@@ -253,13 +253,15 @@ export default class Index extends Component {
     _showModal() {
         let imgs = [];
         this.state.data.map((content) => {
-            if (content.indexOf('.aac') != -1) {
-                return
-            } else if (content.indexOf('.mp4') != -1) {
-                return
-            } else {
-                let arr = { url: content };
-                imgs.push(arr);
+            if (content) {
+                if (content.indexOf('.aac') != -1) {
+                    return
+                } else if (content.indexOf('.mp4') != -1) {
+                    return
+                } else {
+                    let arr = { url: content };
+                    imgs.push(arr);
+                }
             }
         });
 

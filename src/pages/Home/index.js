@@ -84,6 +84,11 @@ export default class Index extends Component {
     this.props.navigation.navigate('ImagePicker', { title: '图片视频音频选择' });
   }
 
+  //二维码扫描
+  _toQrcode() {
+    this.props.navigation.navigate('QrcodeView', { title: '扫描二维码' });
+  }
+
   //展示侧拉弹窗
   _showDrawer() {
     this.drawer = Drawer.open(this.renderDrawerLayout(), 'left', 'none');
@@ -119,6 +124,7 @@ export default class Index extends Component {
           <FirstItemView title={'登录post请求{' + this.state.strName + '}'} onPress={() => this._doLogin()} />
           <FirstItemView title='图表组件' onPress={() => this._toECharts()} />
           <FirstItemView title='图片-视频-音频组件' onPress={() => this._toImagePicker()} />
+          <FirstItemView title='二维码扫描' onPress={() => this._toQrcode()} />
         </ScrollView>
       </View>
     );

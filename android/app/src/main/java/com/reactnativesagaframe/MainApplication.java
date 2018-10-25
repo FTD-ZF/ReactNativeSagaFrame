@@ -3,6 +3,7 @@ package com.reactnativesagaframe;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.reactnativecomponent.barcode.RCTCapturePackage;
 import com.zmxv.RNSound.RNSoundPackage;
 import com.rnim.rn.audio.ReactNativeAudioPackage;
 import com.reactnative.ivpusic.imagepicker.PickerPackage;
@@ -29,6 +30,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RCTCapturePackage(),
             new RNSoundPackage(),
             new ReactNativeAudioPackage(),
             new PickerPackage(),

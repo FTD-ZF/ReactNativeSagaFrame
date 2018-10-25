@@ -4523,6 +4523,10 @@ react-native-safe-area-view@^0.9.0:
   dependencies:
     hoist-non-react-statics "^2.3.1"
 
+react-native-smart-barcode@^1.0.6:
+  version "1.0.6"
+  resolved "http://registry.npm.taobao.org/react-native-smart-barcode/download/react-native-smart-barcode-1.0.6.tgz#7411586c687ed25b6adf456f949b39699c63db5e"
+
 react-native-sound@^0.10.9:
   version "0.10.9"
   resolved "http://registry.npm.taobao.org/react-native-sound/download/react-native-sound-0.10.9.tgz#6b00b0f4afd017cde09fbb9d171df1b5d5b851a8"
