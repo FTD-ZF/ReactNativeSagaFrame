@@ -21,13 +21,24 @@ RN开发（一切尽在代码中）
 * 组件分别是react-native-amap3d和react-native-amap-geolocation
 * 需要去高德开放平台申请key
 * 安卓端根据相关说明进行配置,暂未遇到繁琐问题--Android studio需安装kotlin插件
-* iOS端问题  目前对于地图相关组件,iOS端需要安装CocoaPods 
-* xcode基本会遇到node_modules包中third-party问题/n
+* iOS端问题 目前对于地图相关组件,iOS端需要安装CocoaPods 
+* xcode基本会遇到node_modules包中third-party相关问题  
    解决方式 来自https://github.com/facebook/react-native/issues/19774  
     1.项目根目录下cd node_modules/react-native  
     2.执行 scripts/ios-install-third-party.sh  
     3.接着 cd third-party 再cd glog-0.3.x  这个‘x‘就是看本地的这个glog版本了  
     4.最后执行 ./configure  
+* 完成CocoaPods安装后,在iOS目录下,配置好Podfile文件,执行pod install 可能会出现问题  
+    问题1:输出 xcrun -k --sdk iphoneos --show-sdk-path相关内容  
+    解决方式：来自 https://github.com/facebook/react-native/issues/18408  
+        执行 sudo xcode-select --switch /Applications/Xcode.app  
+        然后再次执行 pod install 应该可以解决  
+    问题2:在解决问题1后，Xcode进行build时可能会报错，还是来自third-party的问题  
+    输出错误 No member named '__rip' in '__darwin_arm_thread_state64'相关内容  
+    解决方式 直接点击这个错误指向的代码 把 return (void*)context->PC_FROM_UCONTEXT;改为 return NULL;  
+    此解决方式来自 https://github.com/facebook/react-native/issues/16106  
+    问题3: 出现RCTWebSocket 相关问题   
+    解决方式 进入Build Phases中的 Link Binary With Libraries把libfishhook.a删了再重新加就可以了  
 
 
     
