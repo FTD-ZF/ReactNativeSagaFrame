@@ -22,12 +22,12 @@ RN开发（一切尽在代码中）
 * 需要去高德开放平台申请key
 * 安卓端根据相关说明进行配置,暂未遇到繁琐问题--Android studio需安装kotlin插件
 * iOS端问题  目前对于地图相关组件,iOS端需要安装CocoaPods 
-* xcode基本会遇到node_modules包中third-party问题
-   解决方式 来自https://github.com/facebook/react-native/issues/19774
-    1.项目根目录下cd node_modules/react-native
-    2.执行 scripts/ios-install-third-party.sh
-    3.接着 cd third-party 再cd glog-0.3.x  这个‘x‘就是看本地的这个glog版本了
-    4.最后执行 ./configure
+* xcode基本会遇到node_modules包中third-party问题/n
+   解决方式 来自https://github.com/facebook/react-native/issues/19774/n
+    1.项目根目录下cd node_modules/react-native/n
+    2.执行 scripts/ios-install-third-party.sh/n
+    3.接着 cd third-party 再cd glog-0.3.x  这个‘x‘就是看本地的这个glog版本了/n
+    4.最后执行 ./configure/n
 
 
     
