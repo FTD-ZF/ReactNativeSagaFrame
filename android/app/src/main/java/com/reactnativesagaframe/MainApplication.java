@@ -3,6 +3,8 @@ package com.reactnativesagaframe;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import cn.qiuxiang.react.geolocation.AMapGeolocationPackage;
+import cn.qiuxiang.react.amap3d.AMap3DPackage;
 import com.reactnativecomponent.barcode.RCTCapturePackage;
 import com.zmxv.RNSound.RNSoundPackage;
 import com.rnim.rn.audio.ReactNativeAudioPackage;
@@ -30,6 +32,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new AMapGeolocationPackage(),
+            new AMap3DPackage(),
             new RCTCapturePackage(),
             new RNSoundPackage(),
             new ReactNativeAudioPackage(),

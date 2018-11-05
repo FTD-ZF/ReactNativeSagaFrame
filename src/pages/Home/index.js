@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Dimensions, TouchableOpacity, Image, ScrollView
 import { AppColors, AppStyles } from '../../commons/styles';
 import { Toast, Drawer } from 'teaset';
 import FirstItemView from '../../components/HomeItemVIew/FirstItemView';
-
+import { Geolocation } from "react-native-amap-geolocation";//定位获取当前详细信息
 
 
 export default class Index extends Component {
@@ -40,11 +40,16 @@ export default class Index extends Component {
   }
 
   componentDidMount() {
-
+    this.initLocation();
   }
 
 
-
+  async initLocation() {
+    await Geolocation.init({
+      ios: "27817fec2cab4beb102f53ed85218e0f",
+      android: "d2e5cc39c0553791dc1a91a303dc3c52"
+    })
+  }
 
   //刷新
   _onRefresh() {
@@ -89,6 +94,11 @@ export default class Index extends Component {
     this.props.navigation.navigate('QrcodeView', { title: '扫描二维码' });
   }
 
+  //高德地图定位
+  _toMapView() {
+    this.props.navigation.navigate('MapView', { title: '高德地图定位' });
+  }
+
   //展示侧拉弹窗
   _showDrawer() {
     this.drawer = Drawer.open(this.renderDrawerLayout(), 'left', 'none');
@@ -125,6 +135,7 @@ export default class Index extends Component {
           <FirstItemView title='图表组件' onPress={() => this._toECharts()} />
           <FirstItemView title='图片-视频-音频组件' onPress={() => this._toImagePicker()} />
           <FirstItemView title='二维码扫描' onPress={() => this._toQrcode()} />
+          <FirstItemView title='高德地图定位' onPress={() => this._toMapView()} />
         </ScrollView>
       </View>
     );

@@ -14,7 +14,7 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-
+#import <AMapFoundationKit/AMapFoundationKit.h>
 @implementation AppDelegate
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
@@ -64,7 +64,7 @@
 {
   [JPUSHService setupWithOption:launchOptions appKey:@"36b9c76c1729adcd0f22e3b3"
                         channel:nil apsForProduction:nil];
-  
+  [AMapServices sharedServices].apiKey = @"27817fec2cab4beb102f53ed85218e0f";
   NSURL *jsCodeLocation;
   
   //  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
@@ -73,7 +73,7 @@
   jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
 #else
   //离线包
-  jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"bundle/index" withExtension:@"jsbundle"];
+  jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"bundle/index.ios" withExtension:@"jsbundle"];
 #endif
   
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation

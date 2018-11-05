@@ -4416,6 +4416,14 @@ react-lifecycles-compat@^3.0.2:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
+react-native-amap-geolocation@^0.3.2:
+  version "0.3.2"
+  resolved "http://registry.npm.taobao.org/react-native-amap-geolocation/download/react-native-amap-geolocation-0.3.2.tgz#99b208638dd7ff911e60d34b36ee1ffc0d9b82b5"
+
+react-native-amap3d@^1.0.2:
+  version "1.0.2"
+  resolved "http://registry.npm.taobao.org/react-native-amap3d/download/react-native-amap3d-1.0.2.tgz#cbe0df70edefdb582a7bfea1fc2afdc44da2a587"
+
 react-native-animatable@^1.2.4:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/react-native-animatable/-/react-native-animatable-1.3.0.tgz#b5c3940fc758cfd9b2fe54613a457c4b6962b46e"

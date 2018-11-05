@@ -27,6 +27,11 @@ import ImageViewer from 'react-native-image-zoom-viewer';
 
 let pathNum = 0;//用于音频文件路径设置中
 
+//react-native-image-crop-picker相关问题
+/*
+需要在安卓端 Android studio中react-native-image-crop-picker的文件库中gradle文件
+                    添加相关的buildscript和allprojects
+*/
 export default class Index extends Component {
 
     static navigationOptions = ({ navigation }) => ({

@@ -6,6 +6,7 @@ import ListView from '../pages/List';
 import ECharts from '../pages/ECharts';
 import ImagePicker from '../pages/ImagePicker';
 import QrcodeView from '../pages/Qrcode';
+import MapView from '../pages/Map';
 
 export {
   PersonalView,
@@ -16,4 +17,5 @@ export {
   ECharts,
   ImagePicker,
   QrcodeView,
+  MapView,
 }

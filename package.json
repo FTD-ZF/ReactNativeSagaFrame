@@ -20,6 +20,8 @@
     "prop-types": "^15.6.2",
     "react": "16.4.1",
     "react-native": "0.55.3",
+    "react-native-amap-geolocation": "^0.3.2",
+    "react-native-amap3d": "^1.0.2",
     "react-native-audio": "^4.2.2",
     "react-native-autoflatlist": "^1.0.0",
     "react-native-beautiful-video-recorder": "^1.2.0",

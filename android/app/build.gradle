@@ -188,6 +188,8 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-amap-geolocation')
+    compile project(':react-native-amap3d')
     compile project(':react-native-smart-barcode')
     compile project(':react-native-sound')
     compile project(':react-native-audio')

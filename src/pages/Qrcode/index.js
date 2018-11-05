@@ -19,6 +19,11 @@ import * as Types from '../../infrastructure/constants/actionsTypes';
 import Barcode from 'react-native-smart-barcode';
 
 //扫描二维码组件问题说明 https://www.jianshu.com/p/8e8bc89bfe2c
+/*一开始运行项目出现proptypes相关错误 ，需要去node_modules包中，
+           修改react-native-smart-barcode中Barcode.js文件，
+           去除本身引用的PropTypes,重新添加import PropTypes from 'prop-types'
+           如果没有就重新依赖prop-types包
+*/
 export default class Index extends Component {
 
     static navigationOptions = ({ navigation }) => ({

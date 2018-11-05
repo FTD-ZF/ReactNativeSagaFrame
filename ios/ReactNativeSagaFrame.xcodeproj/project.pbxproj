@@ -73,6 +73,7 @@
 		AAC5C58944E64D8F888A5A8E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 317932185C264341BD751271 /* Security.framework */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		AEAAABC7EF474119A17636EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C63B3044FD47EF93FA1940 /* Foundation.framework */; };
+		B82A2857483EE8B7DE12B27F /* libPods-ReactNativeSagaFrame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7208F1D9F2D7AE89E4351B7 /* libPods-ReactNativeSagaFrame.a */; };
 		BCD1629B86C0462497CD3678 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DBC970E5ECA40948E9D1AB5 /* CFNetwork.framework */; };
 		BEBFDE61137640DAA2255EC4 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 980A87B252E44068A356DCB7 /* Zocial.ttf */; };
 		F2802DE3191143B0AE02B0FF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28C606069484E6EA2ADEB19 /* CoreGraphics.framework */; };
@@ -461,6 +462,7 @@
 		143A0A38AC504770908C1873 /* RCTJPushModule.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTJPushModule.xcodeproj; path = "../node_modules/jpush-react-native/ios/RCTJPushModule.xcodeproj"; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		1512FB586D7D4F48BF3D5608 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		1C01E4386E2D8E27E768E500 /* Pods-ReactNativeSagaFrame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeSagaFrame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactNativeSagaFrame/Pods-ReactNativeSagaFrame.debug.xcconfig"; sourceTree = "<group>"; };
 		2654E39DDCE24630AD1FB3D9 /* libRNCamera.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNCamera.a; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* ReactNativeSagaFrame-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ReactNativeSagaFrame-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* ReactNativeSagaFrame-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReactNativeSagaFrame-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -472,6 +474,7 @@
 		465BBEF4B8C64FEA9DBF33D6 /* libRNMov2mp4.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNMov2mp4.a; sourceTree = "<group>"; };
 		4DAD8B2BBEAF4F5AAEBD25E2 /* CoreTelephony.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		5042E6CC955D4FFD896F7741 /* libimageCropPicker.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libimageCropPicker.a; sourceTree = "<group>"; };
+		53470E8AAEF3B97E367E2A49 /* Pods-ReactNativeSagaFrame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeSagaFrame.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactNativeSagaFrame/Pods-ReactNativeSagaFrame.release.xcconfig"; sourceTree = "<group>"; };
 		548B1EA134384EAFB537C383 /* libRCTJPushModule.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTJPushModule.a; sourceTree = "<group>"; };
 		58DCE3091CF148EA8C802E6F /* libRCTJCoreModule.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTJCoreModule.a; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
@@ -512,6 +515,7 @@
 		D32D059CA716489C85106DA1 /* RCTBarCode.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTBarCode.xcodeproj; path = "../node_modules/react-native-smart-barcode/ios/RCTBarcode/RCTBarCode.xcodeproj"; sourceTree = "<group>"; };
 		D5C63B3044FD47EF93FA1940 /* Foundation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D8428DD41A63474CA3CA6C9A /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		E7208F1D9F2D7AE89E4351B7 /* libPods-ReactNativeSagaFrame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeSagaFrame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F15D820D71854A43A442CA23 /* libRNAudio.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNAudio.a; sourceTree = "<group>"; };
 		F28C606069484E6EA2ADEB19 /* CoreGraphics.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F81308EB234F4D9B8CCF806A /* libRCTBarcode.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTBarcode.a; sourceTree = "<group>"; };
@@ -565,6 +569,7 @@
 				610C5296296248B9998C8B01 /* UIKit.framework in Frameworks */,
 				185A7CA0BF4045D7A55203F3 /* libresolv.tbd in Frameworks */,
 				F2802DE3191143B0AE02B0FF /* CoreGraphics.framework in Frameworks */,
+				B82A2857483EE8B7DE12B27F /* libPods-ReactNativeSagaFrame.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -729,8 +734,18 @@
 				C0B6F2A620B74A319FDE8693 /* UIKit.framework */,
 				727958BD6F774C3AB0DDD3B8 /* libresolv.tbd */,
 				F28C606069484E6EA2ADEB19 /* CoreGraphics.framework */,
+				E7208F1D9F2D7AE89E4351B7 /* libPods-ReactNativeSagaFrame.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5BE4271FF38AA4819E6834E1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1C01E4386E2D8E27E768E500 /* Pods-ReactNativeSagaFrame.debug.xcconfig */,
+				53470E8AAEF3B97E367E2A49 /* Pods-ReactNativeSagaFrame.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
@@ -910,6 +925,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				824B1CF1CFB34CC28E66C995 /* Resources */,
 				7FBBC4C02176CAB3002EB94F /* Recovered References */,
+				5BE4271FF38AA4819E6834E1 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -961,11 +977,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ReactNativeSagaFrame" */;
 			buildPhases = (
+				97BDEB51B313F695E912C289 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				7FBBC81421819E1A002EB94F /* Embed Frameworks */,
+				8235618695B42A099D434772 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1562,6 +1580,50 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
+		8235618695B42A099D434772 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ReactNativeSagaFrame/Pods-ReactNativeSagaFrame-resources.sh",
+				"${PODS_ROOT}/AMap3DMap/MAMapKit.framework/AMap.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMap.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactNativeSagaFrame/Pods-ReactNativeSagaFrame-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97BDEB51B313F695E912C289 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReactNativeSagaFrame-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1729,6 +1791,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C01E4386E2D8E27E768E500 /* Pods-ReactNativeSagaFrame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1777,6 +1840,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53470E8AAEF3B97E367E2A49 /* Pods-ReactNativeSagaFrame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1832,6 +1896,8 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CODE_SIGN_ENTITLEMENTS = "ReactNativeSagaFrame-tvOS/ReactNativeSagaFrame-tvOS.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = W6QS22PSYB;
 				ENABLE_TESTABILITY = YES;
@@ -1872,6 +1938,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.ReactNativeSagaFrame-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
@@ -1888,6 +1955,8 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CODE_SIGN_ENTITLEMENTS = "ReactNativeSagaFrame-tvOS/ReactNativeSagaFrame-tvOS.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = W6QS22PSYB;
@@ -1928,6 +1997,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.ReactNativeSagaFrame-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
