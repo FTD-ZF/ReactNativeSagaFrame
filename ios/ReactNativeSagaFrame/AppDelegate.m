@@ -6,6 +6,7 @@
  */
 
 #import "AppDelegate.h"
+#import <CodePush/CodePush.h>
 #import <RCTJPushModule.h>
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
@@ -67,14 +68,21 @@
   [AMapServices sharedServices].apiKey = @"27817fec2cab4beb102f53ed85218e0f";
   NSURL *jsCodeLocation;
   
-  //  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-#ifdef DEBUG
-  //开发包
-  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-#else
-  //离线包
-  jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"bundle/index.ios" withExtension:@"jsbundle"];
-#endif
+  //  
+    #ifdef DEBUG
+        jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+    #else
+        jsCodeLocation = [CodePush bundleURL];
+    #endif
+  
+  jsCodeLocation = [CodePush bundleURL];
+//#ifdef DEBUG
+//  //开发包
+//  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+//#else
+//  //离线包
+//  jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"bundle/index.ios" withExtension:@"jsbundle"];
+//#endif
   
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"ReactNativeSagaFrame"

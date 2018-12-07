@@ -73,10 +73,11 @@ import com.android.build.OutputFile
  */
 
 project.ext.react = [
-    entryFile: "index.js"
+        entryFile: "index.js"
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
+apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -92,6 +93,8 @@ def enableSeparateBuildPerCPUArchitecture = false
  * Run Proguard to shrink the Java bytecode in release builds.
  */
 def enableProguardInReleaseBuilds = false
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
 android {
     compileSdkVersion 26
@@ -102,7 +105,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
         manifestPlaceholders = [
                 JPUSH_APPKEY: "36b9c76c1729adcd0f22e3b3",
                 APP_CHANNEL : "default"
@@ -111,6 +114,8 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
+
+        multiDexEnabled true
     }
     splits {
         abi {
@@ -170,6 +175,10 @@ android {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
             signingConfig signingConfigs.release //添加这句话引用签名配置
+            buildConfigField "String", "CODEPUSH_KEY", '"' + properties.getProperty("code_push_key_production") + '"'
+        }
+        debug {
+            buildConfigField "String", "CODEPUSH_KEY", '"' + properties.getProperty("code_push_key_staging") + '"'
         }
     }
     // applicationVariants are e.g. debug, release
@@ -177,7 +186,7 @@ android {
         variant.outputs.each { output ->
             // For each separate APK per architecture, set a unique version code as described here:
             // http://tools.android.com/tech-docs/new-build-system/user-guide/apk-splits
-            def versionCodes = ["armeabi-v7a":1, "x86":2]
+            def versionCodes = ["armeabi-v7a": 1, "x86": 2]
             def abi = output.getFilter(OutputFile.ABI)
             if (abi != null) {  // null for the universal-debug, universal-release variants
                 output.versionCodeOverride =
@@ -188,6 +197,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-code-push')
     compile project(':react-native-amap-geolocation')
     compile project(':react-native-amap3d')
     compile project(':react-native-smart-barcode')
@@ -200,6 +210,7 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile "com.android.support:appcompat-v7:26.1.0"
     compile 'com.facebook.react:react-native:+'
+    compile 'com.android.support:multidex:1.0.1'
 //    compile "com.android.support:design:26.1.0"
     // From node_modules
 //    compile 'com.android.support:support-v4:26.0.0-alpha1'

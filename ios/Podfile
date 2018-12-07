@@ -25,6 +25,8 @@ target 'ReactNativeSagaFrame' do
     pod 'react-native-amap3d', path: '../node_modules/react-native-amap3d/lib/ios'
     # pod 'react-native-amap-geolocation', path: '../lib/ios'
    pod 'react-native-amap-geolocation', path: '../node_modules/react-native-amap-geolocation/lib/ios'
+  pod 'CodePush', :path => '../node_modules/react-native-code-push'
+
 end
 
 post_install do |installer|

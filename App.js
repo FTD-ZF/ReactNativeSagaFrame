@@ -6,6 +6,7 @@ import rootSaga from './src/infrastructure/sagas';
 import App from './src/components/Navigation/navState';
 import { Toast, Theme } from 'teaset';
 import JPushModule from 'jpush-react-native';
+import CodePush from 'react-native-code-push';
 
 const store = configureStore();
 // run root saga
@@ -17,6 +18,9 @@ export default class app extends Component {
 
   //此处极光推送相关功能暂且放在一个页面
   componentWillMount() {
+
+    CodePush.disallowRestart();//禁止重启
+    this._toUpApp();
 
     //初始化极光推送
     if (Platform.OS === 'android') {
@@ -32,6 +36,9 @@ export default class app extends Component {
   }
 
   componentDidMount() {
+
+    CodePush.allowRestart();//加载完了允许重启
+
     this.setAlias('123456');//设置alias--此处一般设置在登陆成功后
 
     //通知栏收到消息时的监听
@@ -43,6 +50,22 @@ export default class app extends Component {
     JPushModule.addReceiveOpenNotificationListener((map) => {
       Toast.message('点击了通知');
     });
+  }
+
+  _toUpApp() {
+
+    CodePush.sync({
+      // updateDialog: {
+      //   appendReleaseDescription: true,
+      //   descriptionPrefix: '更新内容',
+      //   title: '更新',
+      //   mandatoryUpdateMessage: '',
+      //   mandatoryContinueButtonLabel: '更新',
+      // },
+      mandatoryInstallMode: CodePush.InstallMode.ON_NEXT_RESTART,//下次开启更新
+    });
+
+
   }
 
 

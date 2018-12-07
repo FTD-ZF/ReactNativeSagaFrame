@@ -26,6 +26,7 @@
     "react-native-autoflatlist": "^1.0.0",
     "react-native-beautiful-video-recorder": "^1.2.0",
     "react-native-camera": "git+https://git@github.com/react-native-community/react-native-camera",
+    "react-native-code-push": "^5.5.0",
     "react-native-image-crop-picker": "^0.21.2",
     "react-native-image-zoom-viewer": "^2.2.23",
     "react-native-iphone-x-helper": "^1.0.3",
