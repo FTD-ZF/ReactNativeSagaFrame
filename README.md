@@ -1,12 +1,14 @@
 # ReactNativeSagaFrame
 RN开发（一切尽在代码中）
-### 安装运行(已适配Android和iOS)
+### 安装运行(已适配Android和iOS)--
 1.    yarn install
-2.    react-native run-android or react-native run-ios 
+2.    react-native link (关联下原生)
+3.    react-native run-android or react-native run-ios 
 ### 相关问题处理
 ###### 由于用到的组件在适配Android和iOS中不是很完善,所以需要修改node_modules包中的内容;对于初用RN开发项目的朋友,尽量不要去改这个node_modules包
         
 ##### 一开始运行项目出现proptypes相关错误--来自扫描二维码组件问题说明 https://www.jianshu.com/p/8e8bc89bfe2c
+* 安卓端，AS中修改react-native-smart-barcode库中，把RCTCapturePackage文件中createJSModules()方法的@Override注释掉
 * 需要去node_modules包中,修改react-native-smart-barcode中Barcode.js文件,去除本身引用的PropTypes,
   重新添加import PropTypes from 'prop-types',如果没有就重新依赖prop-types包
   
