@@ -1,6 +1,7 @@
 # ReactNativeSagaFrame
 RN开发（一切尽在代码中）
-### 安装运行(已适配Android和iOS)--
+### 安装运行(已适配Android和iOS)
+###### React-Native "0.55.3" Android studio版本2.3.3  Xcode最新版 
 1.    yarn install
 2.    react-native link (关联下原生)
 3.    react-native run-android or react-native run-ios 
