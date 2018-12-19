@@ -3,8 +3,7 @@ RN开发（一切尽在代码中）
 ### 安装运行(已适配Android和iOS)
 ###### React-Native "0.55.3" Android studio版本2.3.3  Xcode最新版 
 1.    yarn install
-2.    react-native link (关联下原生)
-3.    react-native run-android or react-native run-ios 
+2.    react-native run-android or react-native run-ios （另外打包bundle再去原生里运行也是可以的，相关命令已在package.json中配置）
 ### 相关问题处理
 ###### 由于用到的组件在适配Android和iOS中不是很完善,所以需要修改node_modules包中的内容;对于初用RN开发项目的朋友,尽量不要去改这个node_modules包
         
@@ -17,7 +16,9 @@ RN开发（一切尽在代码中）
 * ECharts设置 需要去node_modules/native-echarts/src/components/ECharts/index.js修改部分代码
 * 禁止显示滑动条和滑动：改为scrollEnabled={Platform.OS === 'ios' ? false : true}和scalesPageToFit={Platform.OS === 'ios' ? false : true}
 * 打包问题：ios暂无，安卓端：将node_modules/native-echarts/src/components/ECharts/tpl.html文件拷贝到安卓项目下面的app/src/main/assets文件夹中,并且修改：source={Platform.OS === 'ios' ? require('./tpl.html') : { uri: 'file:///android_asset/tpl.html' }}
-
+##### Android和iOS屏幕适配（Android端主要设置沉浸式状态栏，iOS端主要适配iPhoneX系列的屏幕）
+* Android端，在原生MainActivity中设置全屏显示，在react-navigation中的headerStyle设置相关高度，其中用到了StatusBar.currentHeight获取当前Android手机状态栏高度
+* iOS端，由于引用了teaset组件并适配了iPhoneX，此处做iPhone XR,XS Max屏幕适配,此处只做了竖屏适配，依旧在react-navigation的样式中设置即可
 ##### 图片-音频-视频组件
 * 注意相关权限添加
 ##### 高德地图定位功能
@@ -53,7 +54,7 @@ RN开发（一切尽在代码中）
 * 每次更新前，需要先把js打包成 bundle，此处是执行 yarn run bundle-android或者yarn run bundle-ios
 * Android端部署（此处可不设置版本号，执行命令时会自动读取，版本号需设置"x.x.x"，Android端设置“versionName”即可，若为生产环境需要指定的，Staging则可以不指定，描述和是否强制更新也可选设置）
 * 执行 code-push release-react ReactNativeSagaFrame android -d Production  --des "Android端更新" -m true
-* iOS端部署 此项目由于使用了CocoaPods，所以此处xcode中的包，需要从node_modules的react-native-code-push包中的ios文件夹下后缀为xcodeproj的文件拖入xcode的Libraries中，另外注意设置版本号也是"x.x.x"；
+* iOS端部署 此项目由于使用了CocoaPods，所以此处xcode中的包，注意在Podfile文件中查看配置路径是否正确，并且设置版本号也是"x.x.x"；
 * 执行 code-push release-react ReactNativeSagaFrame ios -d Production  --des "iOS端更新" -m true
 * 以项目为例查询部署历史 code-push deployment history ReactNativeSagaFrame Production
 
