@@ -54,7 +54,7 @@ RN开发（一切尽在代码中）
 * 每次更新前，需要先把js打包成 bundle，此处是执行 yarn run bundle-android或者yarn run bundle-ios
 * Android端部署（此处可不设置版本号，执行命令时会自动读取，版本号需设置"x.x.x"，Android端设置“versionName”即可，若为生产环境需要指定的，Staging则可以不指定，描述和是否强制更新也可选设置）
 * 执行 code-push release-react ReactNativeSagaFrame android -d Production  --des "Android端更新" -m true
-* iOS端部署 此项目由于使用了CocoaPods，所以此处xcode中的包，注意在Podfile文件中查看配置路径是否正确，并且设置版本号也是"x.x.x"；
+* iOS端部署 此项目由于使用了CocoaPods，注意在Podfile文件中查看配置路径是否正确，并且设置版本号也是"x.x.x"；
 * 执行 code-push release-react ReactNativeSagaFrame ios -d Production  --des "iOS端更新" -m true
 * 以项目为例查询部署历史 code-push deployment history ReactNativeSagaFrame Production
 
