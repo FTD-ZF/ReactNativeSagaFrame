@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Image, TouchableOpacity, Text } from 'react-native';
+import { View, Image, TouchableOpacity, Text, StatusBar } from 'react-native';
 import CardStackStyleInterpolator from 'react-navigation/src/views/CardStack/CardStackStyleInterpolator';
-import { AppColors } from '../../commons/styles';
+import { AppColors, AppStyles } from '../../commons/styles';
 
 const activeTabColor = '#38ADFF';// 底部文字和图片选中颜色
 const defaultTabColor = '#949494';//文字和图片未选中颜色
@@ -29,12 +29,8 @@ const headerOptions = props => {
     headerLeft,
     headerRight,
     header,
-    headerTitleStyle: { fontSize: 18, alignSelf: "center", color: "#f8f8f8", flex: 1, textAlign: 'center', },
-    headerStyle: {
-      height: 44,
-      backgroundColor: AppColors.themecolor,
-      borderBottomWidth: 0,
-    },
+    headerTitleStyle: { fontSize: 18, alignSelf: "center", color: "#f8f8f8", flex: 1, textAlign: 'center',  },
+    headerStyle: AppStyles.NavTopStyle,
     ...navigationOptions,
   }
 }
@@ -73,16 +69,7 @@ const TabNavigatorConfig = options => {
         padding: 0,
         fontSize: 12,
       },
-      style: {
-        margin: 0,
-        padding: 0,
-        height: 50,
-        borderTopColor: "#e5e5e5",
-        borderTopWidth: 0.5,
-        borderBottomWidth: 0.5,
-        borderBottomColor: "#e5e5e5",
-        backgroundColor: "#f8f8f8",
-      },
+      style: AppStyles.NavBottomStyle,
       pressColor: "#e5e5e5",
       pressOpacity: 0.3,
       indicatorStyle: {

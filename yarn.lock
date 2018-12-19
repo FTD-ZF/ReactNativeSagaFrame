@@ -4681,13 +4681,6 @@ react-native-beautiful-video-recorder@^1.2.0:
   version "1.2.0"
   resolved "http://registry.npm.taobao.org/react-native-beautiful-video-recorder/download/react-native-beautiful-video-recorder-1.2.0.tgz#52b9db231f45689f49bb09f46e9af4206b1176df"
 
-"react-native-camera@git+https://git@github.com/react-native-community/react-native-camera":
-  version "1.3.0"
-  resolved "git+https://git@github.com/react-native-community/react-native-camera#9261524609ac4d9f29a33fb94847ef78a50b38f3"
-  dependencies:
-    lodash "^4.17.10"
-    prop-types "^15.6.2"
-
 react-native-code-push@^5.5.0:
   version "5.5.0"
   resolved "http://registry.npm.taobao.org/react-native-code-push/download/react-native-code-push-5.5.0.tgz#984c7f7cfc1b9e3b88b8725f7e1712d17dc36bb8"
@@ -4774,6 +4767,12 @@ react-native-root-siblings@^3.1.0:
   dependencies:
     react-redux "*"
     static-container "^1.0.0"
+
+react-native-safe-area-view@^0.11.0:
+  version "0.11.0"
+  resolved "http://registry.npm.taobao.org/react-native-safe-area-view/download/react-native-safe-area-view-0.11.0.tgz#4f3dda43c2bace37965e7c6aef5fc83d4f19d174"
+  dependencies:
+    hoist-non-react-statics "^2.3.1"
 
 react-native-safe-area-view@^0.9.0:
   version "0.9.0"
@@ -5692,9 +5691,9 @@ tar@^4:
     safe-buffer "^5.1.2"
     yallist "^3.0.2"
 
-teaset@^0.5.9:
-  version "0.5.9"
-  resolved "https://registry.yarnpkg.com/teaset/-/teaset-0.5.9.tgz#4135c9b7358e4920112baacf5993f4f66b990cbd"
+teaset@0.5.10:
+  version "0.5.10"
+  resolved "http://registry.npm.taobao.org/teaset/download/teaset-0.5.10.tgz#9d039090334cd0027a806f136b7afbb164f5a8a5"
   dependencies:
     prop-types "^15.5.10"
     react-native-deprecated-custom-components "github:facebookarchive/react-native-custom-components"

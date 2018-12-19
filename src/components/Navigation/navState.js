@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BackHandler, ToastAndroid } from "react-native";
+import { BackHandler, ToastAndroid, View, StatusBar } from "react-native";
 import { connect } from 'react-redux';
 import { addListener } from './navHelpers';
 import Routers from '../../routers/app';

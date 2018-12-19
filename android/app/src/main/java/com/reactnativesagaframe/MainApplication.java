@@ -2,7 +2,10 @@ package com.reactnativesagaframe;
 
 import android.app.Application;
 import android.content.Context;
+import android.os.Build;
 import android.support.multidex.MultiDex;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.facebook.react.ReactApplication;
 import com.microsoft.codepush.react.CodePush;
@@ -69,6 +72,7 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+
         SoLoader.init(this, /* native exopackage */ false);
     }
 

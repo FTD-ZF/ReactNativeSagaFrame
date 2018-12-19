@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Platform } from 'react-native';
+import { Platform, StatusBar, View } from 'react-native';
 import { Provider } from 'react-redux';
 import configureStore from './src/infrastructure/store/configureStore';
 import rootSaga from './src/infrastructure/sagas';
@@ -7,6 +7,9 @@ import App from './src/components/Navigation/navState';
 import { Toast, Theme } from 'teaset';
 import JPushModule from 'jpush-react-native';
 import CodePush from 'react-native-code-push';
+import { AppStyles } from './src/commons/styles';
+// import SafeAreaView from 'react-native-safe-area-view';
+// import { SafeAreaView } from 'react-navigation';
 
 const store = configureStore();
 // run root saga
@@ -18,7 +21,6 @@ export default class app extends Component {
 
   //此处极光推送相关功能暂且放在一个页面
   componentWillMount() {
-
     CodePush.disallowRestart();//禁止重启
     this._toUpApp();
 
@@ -102,9 +104,13 @@ export default class app extends Component {
 
   render() {
     return (
+
       <Provider store={store}>
+
         <App />
+
       </Provider>
+
     );
   }
 }
