@@ -99,6 +99,11 @@ export default class Index extends Component {
     this.props.navigation.navigate('MapView', { title: '高德地图定位' });
   }
 
+  //视频播放
+  _toVideoPage() {
+    this.props.navigation.navigate('VideoPage', { title: '视频播放' });
+  }
+
   //展示侧拉弹窗
   _showDrawer() {
     this.drawer = Drawer.open(this.renderDrawerLayout(), 'left', 'none');
@@ -136,6 +141,7 @@ export default class Index extends Component {
           <FirstItemView title='图片-视频-音频组件' onPress={() => this._toImagePicker()} />
           <FirstItemView title='二维码扫描' onPress={() => this._toQrcode()} />
           <FirstItemView title='高德地图定位' onPress={() => this._toMapView()} />
+          <FirstItemView title='视频播放' onPress={() => this._toVideoPage()} />
         </ScrollView>
       </View>
     );

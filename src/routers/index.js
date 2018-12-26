@@ -7,6 +7,7 @@ import ECharts from '../pages/ECharts';
 import ImagePicker from '../pages/ImagePicker';
 import QrcodeView from '../pages/Qrcode';
 import MapView from '../pages/Map';
+import VideoPage from '../pages/Video';
 
 export {
   PersonalView,
@@ -18,4 +19,5 @@ export {
   ImagePicker,
   QrcodeView,
   MapView,
+  VideoPage,
 }

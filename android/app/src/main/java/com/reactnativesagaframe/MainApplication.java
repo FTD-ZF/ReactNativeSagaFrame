@@ -8,6 +8,8 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.facebook.react.ReactApplication;
+import com.github.yamill.orientation.OrientationPackage;
+import com.brentvatne.react.ReactVideoPackage;
 import com.microsoft.codepush.react.CodePush;
 
 import cn.qiuxiang.react.geolocation.AMapGeolocationPackage;
@@ -46,6 +48,8 @@ public class MainApplication extends Application implements ReactApplication {
         protected List<ReactPackage> getPackages() {
             return Arrays.<ReactPackage>asList(
                     new MainReactPackage(),
+                    new OrientationPackage(),
+                    new ReactVideoPackage(),
                     new CodePush(BuildConfig.CODEPUSH_KEY, getApplicationContext(), BuildConfig.DEBUG),
                     new AMapGeolocationPackage(),
                     new AMap3DPackage(),
@@ -79,6 +83,6 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
-        MultiDex.install(this) ;
+        MultiDex.install(this);
     }
 }

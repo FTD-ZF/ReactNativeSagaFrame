@@ -6,11 +6,18 @@ const ScreenHeight = Dimensions.get('window').height;
 
 const XSMAX_WIDTH = 414;
 const XSMAX_HEIGHT = 896;
+const StatusBarHeight = StatusBar.currentHeight;
 
 const AppStyles = {
 
+    XSMAX_WIDTH: 414,
+    XSMAX_HEIGHT: 896,
     screen_width: ScreenWidth,
     screen_height: ScreenHeight,
+    statusBarHeight: StatusBarHeight,
+    AndroidStatusBarHeight: StatusBarHeight + 44,//横屏时
+
+
 
     container: {
         flex: 1,
@@ -33,8 +40,8 @@ const AppStyles = {
     },
     NavTopStyle: {
         height: 44,
-        height: Platform.OS === 'android' ? 44 + StatusBar.currentHeight : ((ScreenWidth === XSMAX_WIDTH) || (ScreenHeight === XSMAX_HEIGHT) ? 64 : 44),
-        paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : ((ScreenWidth === XSMAX_WIDTH) || (ScreenHeight === XSMAX_HEIGHT) ? 40 : 0),
+        height: Platform.OS === 'android' ? 44 + StatusBarHeight : ((ScreenWidth === XSMAX_WIDTH) || (ScreenHeight === XSMAX_HEIGHT) ? 64 : 44),
+        paddingTop: Platform.OS === 'android' ? StatusBarHeight : ((ScreenWidth === XSMAX_WIDTH) || (ScreenHeight === XSMAX_HEIGHT) ? 40 : 0),
         backgroundColor: AppColors.themecolor,
         borderBottomWidth: 0,
         elevation: 0,//消除安卓端导航栏底部的阴影

@@ -1,6 +1,6 @@
 import { StackNavigator, TabNavigator, DrawerNavigator } from 'react-navigation';
 import { headerOptions, RouteConfigs, TabNavigatorConfig, StackNavigatorConfig } from '../components/Navigation/navConfig';
-import { PersonalView, LoginView, Home, ExhibitionView, ListView, ECharts, ImagePicker, QrcodeView,MapView } from './index';
+import { PersonalView, LoginView, Home, ExhibitionView, ListView, ECharts, ImagePicker, QrcodeView, MapView, VideoPage } from './index';
 
 
 
@@ -114,6 +114,17 @@ const Routers = StackNavigator(
     },
     MapView: {
       screen: MapView,
+      navigationOptions: props => {
+        return headerOptions({
+          ...props,
+          ...{
+            back: true,
+          },
+        })
+      },
+    },
+    VideoPage: {
+      screen: VideoPage,
       navigationOptions: props => {
         return headerOptions({
           ...props,

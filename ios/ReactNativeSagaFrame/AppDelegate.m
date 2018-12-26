@@ -69,20 +69,20 @@
   NSURL *jsCodeLocation;
   
   //  
-    #ifdef DEBUG
-        jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-    #else
-        jsCodeLocation = [CodePush bundleURL];
-    #endif
-  
-  jsCodeLocation = [CodePush bundleURL];
-//#ifdef DEBUG
-//  //开发包
-//  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-//#else
-//  //离线包
-//  jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"bundle/index.ios" withExtension:@"jsbundle"];
-//#endif
+//    #ifdef DEBUG
+//        jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+//    #else
+//        jsCodeLocation = [CodePush bundleURL];
+//    #endif
+//
+//  jsCodeLocation = [CodePush bundleURL];
+#ifdef DEBUG
+  //开发包
+  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+#else
+  //离线包
+  jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"bundle/index.ios" withExtension:@"jsbundle"];
+#endif
   
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"ReactNativeSagaFrame"
