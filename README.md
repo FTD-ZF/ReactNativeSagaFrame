@@ -21,6 +21,10 @@ RN开发（一切尽在代码中）
 * iOS端，由于引用了teaset组件并适配了iPhoneX，此处做iPhone XR,XS Max屏幕适配,此处只做了竖屏适配，依旧在react-navigation的样式中设置即可
 ##### 图片-音频-视频组件
 * 注意相关权限添加
+##### 视频播放
+* 此处用到的组件为视频播放组件react-native-video和横竖屏组件react-native-orientation
+视频播放组件中，注意当前RN版本号与react-native-video版本号对应，另外注意网络权限添加
+react-native-orientation组件中，注意横竖屏切换时 需要调整相关高度
 ##### 高德地图定位功能
 * 组件分别是react-native-amap3d和react-native-amap-geolocation
 * 需要去高德开放平台申请key
