@@ -11,6 +11,8 @@ import { AppStyles } from './src/commons/styles';
 // import SafeAreaView from 'react-native-safe-area-view';
 // import { SafeAreaView } from 'react-navigation';
 
+import * as WeChat from 'react-native-wechat';
+
 const store = configureStore();
 // run root saga
 store.runSaga(rootSaga);
@@ -21,6 +23,7 @@ export default class app extends Component {
 
   //此处极光推送相关功能暂且放在一个页面
   componentWillMount() {
+    WeChat.registerApp('wx4cf5cef3b83abf63');
     CodePush.disallowRestart();//禁止重启
     this._toUpApp();
 

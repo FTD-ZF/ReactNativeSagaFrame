@@ -30,6 +30,7 @@ target 'ReactNativeSagaFrame' do
   pod 'react-native-video', :path => '../node_modules/react-native-video'
 
   pod 'react-native-orientation', :path => '../node_modules/react-native-orientation'
+#   pod 'react-native-wechat', :path => '../node_modules/react-native-wechat/ios'
 
 end
 

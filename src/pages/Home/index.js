@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Dimensions, TouchableOpacity, Image, ScrollView, RefreshControl } from 'react-native';
+import { StyleSheet, Platform, Text, View, Dimensions, TouchableOpacity, Image, ScrollView, RefreshControl, Modal } from 'react-native';
 import { AppColors, AppStyles } from '../../commons/styles';
 import { Toast, Drawer } from 'teaset';
 import FirstItemView from '../../components/HomeItemVIew/FirstItemView';
 import { Geolocation } from "react-native-amap-geolocation";//定位获取当前详细信息
-
+import * as WeChat from 'react-native-wechat';
+import resolveAssetSource from 'resolveAssetSource';
+const strPlatform = Platform.OS === 'android' ? 'Android' : 'IOS';
+const shareTitle = '来自ReactNativeSagaFrame分享(' + strPlatform + '端)';
 
 export default class Index extends Component {
 
   static navigationOptions = ({ navigation }) => ({
     headerTitle: '首页',
-    headerLeft: <TouchableOpacity
+    headerLeft: (<TouchableOpacity
       style={{ width: 40, height: 40 }}
       onPress={() => {
         navigation.state.params.showDrawer()
@@ -21,14 +24,28 @@ export default class Index extends Component {
           style={{ width: 30, height: 30, }}
         />
       </View>
-    </TouchableOpacity>
+    </TouchableOpacity>),
+
+    headerRight: (<TouchableOpacity
+      style={{ width: 40, height: 40 }}
+      onPress={() => {
+        navigation.state.params.showShareModel()
+      }}>
+      <View style={{ flexDirection: 'row', width: 50, height: 44, alignItems: 'center', marginRight: 10, }}>
+        <Image
+          source={require("../../commons/assets/icon_share.png")}
+          style={{ width: 30, height: 30, }}
+        />
+      </View>
+    </TouchableOpacity>)
   });
   constructor(props) {
     super(props);
 
     this.state = {
       isRefreshing: false,
-      strName: '未登录'
+      strName: '未登录',
+      isModal: false
     }
   }
 
@@ -36,11 +53,32 @@ export default class Index extends Component {
     this.props.navigation.setParams({
       showDrawer: () => this._showDrawer(),
       testCallBack: (str) => this._callBack(str),
+      showShareModel: () => this._showShareModel(),
     });
   }
 
   componentDidMount() {
     this.initLocation();
+    //监听分享状态
+    // 'SendMessageToWX.Resp' 分享监听字段
+    // 'PayReq.Resp'          支付监听字段
+    // 'SendAuth.Resp'        登录监听字段
+    WeChat.addListener(
+      'SendMessageToWX.Resp',
+      (response) => {
+        if (parseInt(response.errCode) === 0) {
+          Toast.message('分享成功');
+        } else {
+          Toast.message('分享失败');
+        }
+        this.setState({
+          isModal: false
+        });
+      }
+    );
+  }
+  componentWillUnmount() {
+    WeChat.removeAllListeners();
   }
 
 
@@ -72,6 +110,51 @@ export default class Index extends Component {
   //navigation中使用回调
   _callBack(str) {
     this.setState({ strName: str });
+  }
+
+
+  //分享弹窗
+  _showShareModel() {
+    WeChat.isWXAppInstalled()
+      .then((isInstalled) => {
+        if (isInstalled) {
+          this.setState({
+            isModal: true
+          });
+        } else {
+          Toast.message('没有安装微信软件，请您安装微信之后再试');
+        }
+      });
+  }
+  //朋友
+  _shareWX_a() {
+
+    WeChat.shareToSession({
+      type: 'news',
+      title: shareTitle,
+      description: '欢迎Star!',
+      // mediaTagName: 'email signature',
+      // messageAction: 'messageaction',
+      // messageExt: 'messageext',
+      webpageUrl: 'https://github.com/FTD-ZF/ReactNativeSagaFrame',
+      thumbImage: resolveAssetSource(require('../../commons/assets/icon_thumbimage.png')).uri
+      // thumbImage: 'http://shared.ydstatic.com/dict/v5.16/images/logo-entry.png'
+
+    })
+  }
+  //朋友圈
+  _shareWX_b() {
+
+    WeChat.shareToTimeline({
+      type: 'news',
+      title: shareTitle,
+      description: '欢迎Star!',
+      // mediaTagName: 'email signature',
+      // messageAction: 'messageaction',
+      // messageExt: 'messageext',
+      webpageUrl: 'https://github.com/FTD-ZF/ReactNativeSagaFrame',
+      thumbImage: resolveAssetSource(require('../../commons/assets/icon_thumbimage.png')).uri
+    })
   }
 
   //跳转列表页面
@@ -121,6 +204,18 @@ export default class Index extends Component {
     )
   }
 
+  _onRequestClose() {
+    this.setState({
+      isModal: false
+    });
+  }
+  //点击外部关闭modal
+  _closeModal() {
+    this.setState({
+      isModal: false
+    });
+  }
+
   render() {
 
     return (
@@ -143,7 +238,31 @@ export default class Index extends Component {
           <FirstItemView title='高德地图定位' onPress={() => this._toMapView()} />
           <FirstItemView title='视频播放' onPress={() => this._toVideoPage()} />
         </ScrollView>
-      </View>
+
+
+        <Modal
+
+          animationType='slide'
+          transparent={true}
+          visible={this.state.isModal}
+          onRequestClose={() => this._onRequestClose()}>
+          <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'flex-end' }} >
+
+            <TouchableOpacity style={{ height: AppStyles.screen_height - 80 }} onPress={() => this._closeModal()} />
+
+            <View style={{ height: 80, backgroundColor: 'gray', flexDirection: 'row', alignItems: 'center' }}>
+              <TouchableOpacity onPress={() => this._shareWX_a()}>
+                <Image style={{ width: 75, height: 75, }} source={require('../../commons/assets/icon_share_wx_a.png')} />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => this._shareWX_b()}>
+                <Image style={{ width: 75, height: 75, marginLeft: 10 }} source={require('../../commons/assets/icon_share_wx_b.png')} />
+              </TouchableOpacity>
+            </View>
+
+          </View>
+
+        </Modal>
+      </View >
     );
   }
 }
