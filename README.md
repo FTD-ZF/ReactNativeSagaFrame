@@ -49,6 +49,8 @@ react-native-orientation组件中，注意横竖屏切换时 需要调整相关�
     解决方式 进入Build Phases中的 Link Binary With Libraries把libfishhook.a删了再重新加就可以了  
 ##### 极光推送集成
 * 注意ios端证书问题
+##### 微信分享功能
+* 使用组件react-native-wechat，Android和iOS需注意原生模块相关文件和代码添加（此处申请的微信开放平台账号只开通了分享功能，登录与支付暂未开通）
 ##### 热更新集成
 * 此处用的是react-native-code-push,用code-push命令进行部署；
 * code-push安装及注册账号此处就不详细描述了；
